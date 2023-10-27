@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { Hanko, register } from "@teamhanko/hanko-elements";
 
-const hankoApi = process.env.NEXT_PUBLIC_HANKO_API_URL;
+const hankoApi = process.env.NEXT_PUBLIC_HANKO_API_UR || "";
 
 const HankoAuth = () => {
   const router = useRouter();
