@@ -2,7 +2,6 @@
 
 import Logout from "@/components/hanko/logout";
 import MobileSidebar from "@/components/mobile-sidebar";
-
 import dynamic from 'next/dynamic';
 
 const Profile = dynamic(() => import('@/components/hanko/profile'), { ssr: false })
