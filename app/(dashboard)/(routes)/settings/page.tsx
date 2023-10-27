@@ -1,10 +1,10 @@
+"use client"
+
 import { Settings } from "lucide-react";
 
 import { Heading } from "@/components/heading";
 
-const SettingsPage = async () => {
-    const isPro = false
-
+const SettingsPage = () => {
   return ( 
     <div>
       <Heading
@@ -16,7 +16,7 @@ const SettingsPage = async () => {
       />
       <div className="px-4 lg:px-8 space-y-4">
         <div className="text-muted-foreground text-sm">
-          {isPro ? "You are currently on a Pro plan." : "You are currently on a free plan."}
+          You are currently on a free plan
         </div>
       </div>
     </div>
