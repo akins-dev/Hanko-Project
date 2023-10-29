@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Testimonial from "@/components/testimonial";
 
@@ -27,7 +27,7 @@ const testimonies = [
       imageFallback: "F",
       name: "Francis",
       title: "CEO",
-      description: `"I've been using @alphaGPT for two personal projects and it has been amazing being able to use the power of ChatGPT and Replicate AI all in one app 🚀 🚀 "`,
+      description: `"I've been using @alphaGPT for two personal projects and it has been amazing being able to use the power of OpenAI and Replicate AI all in one app 🚀 🚀 "`,
       className: "lg:h-[300px]"
     },
     testimony2: {

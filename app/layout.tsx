@@ -1,7 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import ProgressBarProvider from '@/providers/progress-bar'
+import { ModalProvider } from '@/providers/modal-provider';
+import ProgressBarProvider from '@/providers/progress-bar-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ProgressBarProvider>
+          <ModalProvider />
           {children}
         </ProgressBarProvider>
       </body>
