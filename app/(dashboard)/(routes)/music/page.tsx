@@ -41,7 +41,7 @@ const MusicPage = () => {
     try {
       setMusic(undefined);
 
-      const response = await axios.post("/api/music", values);
+      const response = await axios.post("/api/music", values, {headers:{"Content-Type" : "application/json"}});
 
       setMusic(response.data.audio);
       form.reset();  
@@ -49,7 +49,7 @@ const MusicPage = () => {
       if (error?.response?.status  === 403) {
         proModal.onOpen()
       } else {
-        console.log(error)
+        console.log(error?.response?.data)
       }
     } finally {
       router.refresh()
