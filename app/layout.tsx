@@ -1,10 +1,12 @@
 import './globals.css'
+import { Suspense } from "react"
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
+import { Loading } from '@/components/loading';
 import { ModalProvider } from '@/providers/modal-provider';
 import ProgressBarProvider from '@/providers/progress-bar-provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'], weight: "600" })
 
 export const metadata: Metadata = {
   title: 'AlphaGPT:: AI Platform',
@@ -17,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ProgressBarProvider>
-          <ModalProvider />
-          {children}
-        </ProgressBarProvider>
-      </body>
-    </html>
+    <Suspense fallback={<Loading />}>
+      <html lang="en">
+        <body className={montserrat.className}>
+          <ProgressBarProvider>
+            <ModalProvider />
+            {children}
+          </ProgressBarProvider>
+        </body>
+      </html>
+    </Suspense>
   )
 }
