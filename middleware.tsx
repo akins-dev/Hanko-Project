@@ -12,7 +12,8 @@ export default async function middleware(req: NextRequest) {
     try {
         const verifiedJWT = await jose.jwtVerify(token, JWKS);
         // console.log(verifiedJWT);
-    } catch {
+    } catch (error) {
+        console.log(error)
         return NextResponse.redirect(new URL("/", req.url));
     }
 }

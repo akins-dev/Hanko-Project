@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Suspense fallback={<Loading />}>
-      <html lang="en">
+    <Suspense fallback={<Loading />} >
+      <html lang="en" suppressHydrationWarning>
         <body className={montserrat.className}>
           <ProgressBarProvider>
             <ModalProvider />
