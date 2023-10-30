@@ -75,7 +75,7 @@ export const routes = [
     label: "Code Generation",
     icon: Code,
     href: "/code",
-    color: "text-green-500"
+    color: "text-green-700"
   },
   {
     label: "Settings",
