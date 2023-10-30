@@ -21,13 +21,9 @@ export async function POST(
         const body = await req.json();
         const { messages } = body;
 
-        console.log(messages)
-
         if (!userID) {
             return new NextResponse("Unauthorized", { status: 401 });
         }
-
-        console.log(userId)
 
         if (!openai.apiKey) {
             return new NextResponse("OpenAI API key not configured", { status: 500 });
@@ -39,8 +35,6 @@ export async function POST(
 
         const freeTrial = await checkApiLimit();
 
-        console.log(freeTrial)
-
         if (!freeTrial) {
             return new NextResponse("Free trial has expired.", { status: 403 })
         } 
@@ -50,13 +44,12 @@ export async function POST(
             messages: [instructionMessage, ...messages]
         });
 
-        console.log(response)
-
         await incrementApiLimit();
 
         return NextResponse.json(response.choices[0].message);
 
     } catch (error) {
+        console.log(error)
         return new NextResponse("Internal error", { status: 500 });
     }
 }

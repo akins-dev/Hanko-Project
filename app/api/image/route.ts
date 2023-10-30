@@ -15,7 +15,7 @@ export async function POST(
     try {
         const userID = await userId();
         const body = await req.json();
-         const { prompt, amount = 1, resolution = "512x512" } = body;
+        const { prompt, amount = 1, resolution = "512x512" } = body;
 
         if (!userID) {
             return new NextResponse("Unauthorized", { status: 401 });

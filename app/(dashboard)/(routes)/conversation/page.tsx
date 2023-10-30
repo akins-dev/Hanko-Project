@@ -43,7 +43,6 @@ const ConversationPage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log("onSubmit")
     try {
       const userMessage: OpenAI.Chat.Completions.ChatCompletionMessageParam = {
         role: "user",
@@ -62,8 +61,6 @@ const ConversationPage = () => {
     } catch (error: any) {
       if (error?.response?.status  === 403) {
         proModal.onOpen()
-      } else {
-        console.log(error)
       }
     } finally {
         router.refresh()
