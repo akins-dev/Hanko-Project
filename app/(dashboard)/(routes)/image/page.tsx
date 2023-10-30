@@ -100,7 +100,7 @@ const ImagePage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       disabled={isLoading} 
-                      placeholder="Picture of Jupiter in space." 
+                      placeholder="An astronaut riding a rainbow unicorn." 
                       {...field}
                     />
                   </FormControl>

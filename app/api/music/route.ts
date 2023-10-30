@@ -16,8 +16,6 @@ export async function POST(
         const body = await req.json();
         const { prompt } = body;
 
-        console.log(prompt)
-
         if (!userID) {
             return new NextResponse("Unauthorized", { status: 401 });
         }
@@ -32,8 +30,6 @@ export async function POST(
             return new NextResponse("Free trial has expired.", { status: 403 })
         }
 
-        console.log(freeTrial)
-
         const response = await replicate.run(
             "riffusion/riffusion:8cf61ea6c56afd61d8f5b9ffd14d7c216c0a93844ce2d82ac1c9ecc9c7f24e05",
             {
@@ -43,14 +39,11 @@ export async function POST(
             }
         );
 
-        console.log(response)
-
         await incrementApiLimit();
 
         return NextResponse.json(response);
 
     } catch (error) {
-        console.log(error)
         return new NextResponse("Internal error", { status: 500 });
     }
 }
