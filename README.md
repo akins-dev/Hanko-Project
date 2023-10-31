@@ -1,37 +1,85 @@
 <p>
     <img src="public/alphagpt.png"/>
 </p>
-## Getting Started
+<h1>An AI Platform with Next.js 14, React 18, TailwindCSS, Hanko, Supabase, Bun, Prisma, Typescript, Shadcn UI<h1></h1>
 
-First, run the development server:
+Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Hanko Authentication](https://hannko.io)
+- [Bun](https://bun.sh) (Javascript runtime)
+- [Tailwind design](https://tailwindcss.com/)
+- Tailwind animations and effects with [typewriter-effect](https://www.npmjs.com/package/typewriter-effect)
+- Full responsiveness
+- Client form validation and handling using react-hook-form
+- Server error handling
+- [Image Generation Tool](https://openai.com/api) (Open AI)
+- [Video Generation Tool](https://replicate.com) (Replicate AI)
+- Conversation Generation Tool (Open AI)
+- Music Generation Tool (Replicate AI)
+- Page loading state
+- Free tier with API limiting
+- [Supabase](https://supabase.com/) integration
+- Folder structure in Next 14 App Router
+
+
+### Prerequisites
+
+**Bun**
+
+### Cloning the repository
+
+```shell
+git clone https://github.com/akins-dev/Hanko-Project.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+make setup
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup .env file
+Rename `.env.local.example` to `.env` and add the following:
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```js
+NEXT_PUBLIC_HANKO_API_URL=""
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+OPENAI_API_KEY=""
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+REPLICATE_API_TOKEN=""
 
-## Deploy on Vercel
+# Connect to Supabase with PgBouncer.
+DATABASE_URL="postgres://postgres:__PASSWORD__@db.__YOUR_SUPABASE_PROJECT__.supabase.co:6543/postgres?pgbouncer=true"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Direct connection to the database. Used for migrations.
+DIRECT_URL="postgres://postgres:__PASSWORD__@db.__YOUR SUPABASE_PROJECT__.supabase.co:5432/postgres"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+
+### Setup Prisma
+
+Add PosgreSQL Database (I used `supabase`)
+
+```shell
+bunx prisma db push
+
+```
+
+### Start the app
+
+```shell
+bun run dev
+```
+
+## Available commands
+
+Running commands with npm `bun run [command]`
+
+| command         | description                              |
+| :-------------- | :--------------------------------------- |
+| `dev`           | Starts a development instance of the app |
+
+## Important!
+
+make sure you use `localhost:3000` as your website url when creating a new project with [hanko](https://cloud.hanko.io/)
