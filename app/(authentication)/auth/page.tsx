@@ -5,7 +5,7 @@ const HankoAuth = dynamic(() => import('@/components/hanko/hanko-auth'), { ssr: 
 
 const Auth = () => {
   return (
-    <div className="bg-white p-5 rounded-2xl shadow-md">
+    <div>
         <HankoAuth />
     </div>
   )

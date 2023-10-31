@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +10,26 @@ body,
 :root {
   height: 100%
 }
+
+hanko-auth {
+  --color: rgb(255, 255, 255) !important;
+  --color-shade-1: #d6d6d6;
+  --font-family: 'Montserrat', sans-serif;
+  --background-color: #111827;
+  --headline1-font-size: 30px;
+  --headline1-font-weight: 600;
+}
+
+hanko-profile {
+  --font-family: 'Montserrat', sans-serif;
+  --headline1-font-size: 30px;
+  --headline1-font-weight: 600;
+}
+
+hanko-auth, hanko-profile::part(button):hover {
+  color: black
+}
+
 
 @layer base {
   :root {
@@ -80,18 +102,4 @@ body,
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@font-face {
-  font-family: 'ClashDisplay-Variable';
-  src: url('../fonts/ClashDisplay-Variable.woff2') format('woff2'),
-    url('../fonts/ClashDisplay-Variable.woff') format('woff'),
-    url('../fonts/ClashDisplay-Variable.ttf') format('truetype');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-.clash-display {
-  font-family: "ClashDisplay-Variable", sans-serif;
 }
