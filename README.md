@@ -5,7 +5,7 @@
 
 Features:
 
-- [Hanko Authentication](https://hannko.io)
+- [Hanko Authentication](https://www.hanko.io/)
 - [Bun](https://bun.sh) (Javascript runtime)
 - [Tailwind design](https://tailwindcss.com/)
 - Tailwind animations and effects with [typewriter-effect](https://www.npmjs.com/package/typewriter-effect)
